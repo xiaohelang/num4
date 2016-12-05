@@ -1,0 +1,159 @@
+html,body {
+	height: 100%;
+	overflow-x:hidden;
+	font-family: "微软雅黑";
+}
+ul,li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.div-top {
+	width: 100%;
+	height: 3.2rem;
+	background-color: #1b5c91;
+	color: white;
+	text-align: center;
+	line-height: 3.2rem;
+	font-size: 1rem;
+}
+.wrapper {
+	width: 100%;
+	background-color: #f4f4f4;
+	margin-top: -1px;
+}
+.wrapper .w-con {
+	padding-top: 1.6rem;
+}
+.wrapper .w-con .en-title {
+	float: left;
+	width: 32%;
+	padding: 0.5rem;
+	font-size: 0.85rem;
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	border-radius: 0.3rem;
+	background-color: rgba(18,109,181,0.61);
+}
+.wrapper .w-con .w-en {
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 3.5rem;
+	display: none;
+}
+
+.wrapper .w-con .title-active {
+	color: white;
+	background-color: rgba(80,183,219,0.92);
+}
+.wrapper .w-con .w-en-avtive {
+	display: block;
+}
+/*   轮播图       */
+.wrapper .shuf {
+	width: 100%;
+	height: 8rem;
+}
+.wrapper .shuf .shufss {
+	width: 300%;
+	position: relative;
+	left: 0;
+	transition: all 1s linear;
+}
+.wrapper .shuf .shufss ul li img {
+	display: block;
+	float: left;
+	width: 33.333333333333336%;
+	height: 8rem;
+}
+
+/*   总部公寓入住情况汇总表    */
+.wrapper .w-con .w-en table {
+	width: 100%;
+	font-size: 0.7rem;
+	color: #08375d;
+}
+.wrapper .w-con .w-en table .title-tr th {
+	background-color: #eee;
+	color: black;
+}
+.wrapper .w-con .w-en table tr th:nth-child(1) {
+	width: 8%;
+	color: black;
+	background-color: rgba(105,160,205,0.15);
+}
+.wrapper .w-con .w-en table tr th:nth-child(2) {
+	width: 14%;
+	color: black;
+}
+.wrapper .w-con .w-en table tr:nth-child(2n){
+	background-color: #ddd;
+}
+.wrapper .w-con .w-en table tr,.wrapper .w-con .w-en table th {
+	height: 2.5rem;
+	border: 1px solid white;
+	font-weight: 500;
+}
+/*   公寓楼栋汇总表    */
+
+
+/*   折线图   */
+.en-more {
+	margin: 0 auto;
+	color: black;
+	width: 53.125%;
+	height: 2rem;
+	margin-top: 1rem;
+}
+.en-more span {
+	font-size: 0.8rem;
+	color: rgba(7, 42, 71, 0.89);
+}
+/*.en-more .select-span {
+	width: 28.5625%;
+	height: 1.5rem;
+	margin-top: -0.1rem;
+	margin-left: 0.5rem;
+	position: absolute;
+	overflow: hidden;
+	border-radius: 0.2rem;
+	border: 1px solid #92c3d1; 
+}*/
+/*.en-more .select-span select {
+	padding: 0;
+	height: 1.5rem;
+	color: #1e1c1c; 
+	background: url(../img/select-down.png) no-repeat right;
+	background-color: rgba(56,151,213,0.34);
+	padding-left: 20%;
+	margin-top: -0.1rem;
+	font-size: 0.8rem;
+}*/
+#iframepage {
+	z-index: 10;
+}
+
+/*       */
+@media (max-width:320px){
+	.wrapper .w-con .en-title {
+		font-size: 0.7rem;
+		padding: 0.4rem;
+	}
+	.wrapper .w-con .w-en table {
+		font-size: 0.5rem;
+	}
+	.en-more .select-span {
+		height: 1.5rem;
+	}
+	.en-more .select-span select {
+		font-size: 0.8rem;
+		margin-top: -0.6rem;
+	}
+}
+@media (max-width:414px) and (min-width:321px){
+	.wrapper .w-con .en-title {
+		font-size: 0.7rem;
+		padding: 0.45rem;
+	}
+}

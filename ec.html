@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/select.css"/>
+    <style type="text/css">
+    	select#selectPointOfInterest {
+    		width : 250%;
+    		margin-top: 0rem;
+    		text-indent: 20%;
+    	}
+    	label#lblSelect::after {
+    		right: -150%;
+    		margin-top: 0rem;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="main" style="height:400px"></div>
+    <div class="en-more">
+    	<div>
+    	<span>选择年份</span>
+    	<label id="lblSelect">
+			<select id="selectPointOfInterest" title="Select points of interest nearby">
+			    <option class="now-year">2016</option>
+			        <option>2015</option>
+			        <option>2014</option>
+			        <option>2013</option>
+			        <option>2012</option>
+			</select>
+		</label>
+	</div>
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	
+        var myChart = echarts.init(document.getElementById('main'));
+		
+        var option = {
+            title: {
+                text: ''
+            },
+            tooltip: {},
+            grid: {
+				x: 30,
+				x2: 15,
+				y: 70,
+				y2: 25
+			},
+			toolbox : {
+				show : true,
+				feature : {
+					mark: {
+						show: true
+					},
+					magicType: {
+						show: true,
+						type: ['line', 'bar']
+					},
+					restore: {
+						show: true
+					},
+					saveAsImage: {
+						show: true
+					}
+				}
+			},
+            legend: {
+            	x:25,
+            	y:35,
+                data:[]
+            }, 
+            xAxis: {
+                data: ["1月","3月","5月","7月","9月","11月"]
+            },
+            yAxis: {},
+            series: []
+        };
+        
+        var arr = new Array();
+        arr[0] =  {
+        	name:"销量",
+        	type: 'line',
+        	data:[6, 12, 40, 11, 18, 21]
+        }
+        arr[1] =  {
+        	name:"销量1",
+        	type: 'line',
+        	data:[6,22, 35, 8, 15, 31]
+        }
+        arr[2] =  {
+        	name:"销量2",
+        	type: 'line',
+        	data:[6, 11, 35, 15, 10, 24]
+        }
+        arr[3] =  {
+        	name:"销量3",
+        	type: 'line',
+        	data:[1, 15, 31, 24, 8, 21]
+        }
+        arr[4] =  {
+        	name:"销量4",
+        	type: 'line',
+        	data:[3, 14, 25, 41, 1, 14]
+        }
+        arr[5] =  {
+        	name:"销量5",
+        	type: 'line',
+        	data:[5, 13, 30, 12, 35, 20]
+        }
+        
+		console.log(arr);
+		
+		var names=[];
+        for(var i = 0; i < arr.length; i++){
+        	names.push(arr[i].name);
+        }
+        
+        if (arr.length > 5 && document.body.clientWidth < 400) {
+        	option.grid.y = 100;
+        } 
+        
+        var nowyear = $(".now-year").val();
+        option.title.text = nowyear + "入住峰值图";
+		option.series = arr;
+		option.legend.data = names;
+        myChart.setOption(option);
+        
+        $(".now-year").change(function(){
+        	var nowyear = $(".now-year").val()
+       		option.title.text = nowyear + "入住峰值图";
+			option.series = arr;
+			option.legend.data = names;
+	        myChart.setOption(option);
+      	 	console.log(nowyear);
+        })
+        
+    </script>
+</body>
